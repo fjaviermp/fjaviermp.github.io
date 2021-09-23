@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    background-color: #1E2233;
+}
+
+nav{
+    position: fixed;
+    background-color: rgba(6, 23, 39, 0.5);
+    width: 100%;
+}
+
+nav>ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+li>a{
+    text-decoration: none;
+    color: inherit;
+}
+
+nav>ul>li, ul>a{
+    padding: 2rem;
+    color: white;
+    flex: 1 1 auto;
+    width: 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+header>img{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: -1;
+}
+
+#perfil{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+#perfil>img{
+    border-radius:150px;
+    margin-top: 20%;
+    padding: 0.25rem;
+}
+
+#perfil h1{
+    font-size: 4rem;
+    font-weight: bolder;
+    color: orangered;
+    padding: 0.25rem;
+}
+
+#perfil h2{
+    font-weight: bold;
+    color: white;
+    padding: 0.25rem;
+}
+
+.presentacion{
+    color: white;
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
