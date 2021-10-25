@@ -1,52 +1,31 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
 body{
-    background-color: #1E2233;
+    background-color: #1E2233 !important;
+    overflow-x: hidden;
 }
 
-nav{
-    position: fixed;
-    background-color: rgba(6, 23, 39, 0.5);
-    width: 100%;
+.navbar ul li{
+    margin: 0 0.75rem 0 0.75rem;
 }
 
-nav>ul {
-    list-style-type: none;
+.navbar a{
+    color: white !important;
+    font-size:x-large
+}
+
+section{
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    height: 100vh;
 }
 
-li>a{
-    text-decoration: none;
-    color: inherit;
-}
-
-nav>ul>li, ul>a{
-    padding: 2rem;
-    color: white;
-    flex: 1 1 auto;
-    width: 0;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-}
-
-header>img{
-    width: 100%;
-    height: auto;
+.img-portada{
+    width: auto;
+    height: 100vh;
     position: absolute;
     z-index: -1;
 }
 
-#perfil{
+.perfil{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -56,20 +35,20 @@ header>img{
     z-index: 1;
 }
 
-#perfil>img{
+.perfil>img{
     border-radius:150px;
     margin-top: 20%;
     padding: 0.25rem;
 }
 
-#perfil h1{
+.perfil h1{
     font-size: 4rem;
     font-weight: bolder;
     color: orangered;
     padding: 0.25rem;
 }
 
-#perfil h2{
+.perfil h2{
     font-weight: bold;
     color: white;
     padding: 0.25rem;
@@ -77,6 +56,7 @@ header>img{
 
 .presentacion{
     color: white;
+    background-color: #1E2233 !important;
     display: flex;
     width: 80%;
     margin: 0 auto;
@@ -85,4 +65,62 @@ header>img{
     align-content: center;
     justify-content: center;
     align-items: center;
+}
+
+.img-present{
+    height: 25em !important;
+    margin: 3em !important;
+}
+
+.titulo-present span{
+    color: orangered;
+    font-weight: bolder;
+}
+
+#texto_present, .dato>p{
+    font-size: larger;
+    text-align: justify;
+}
+
+#tarjeta_datos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 3em;
+    border: solid 1px orangered;
+    border-radius: 10px;
+}
+
+.dato{
+    width: 50%;
+}
+
+.pregunta{
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 768px){
+    .img-present{
+        display: none;
+    }
+
+    #tarjeta_datos{
+        padding: 0.5em;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+
+    .dato p{
+        margin-block-start: 0 !important;
+        margin-block-end: 0 !important;
+        margin-inline-start: 0 !important;
+        margin-inline-end:  0  !important;
+        margin-bottom: 0 !important;
+        text-align: center;
+    }
+
+    #email, #idiomas{
+        width: 100%;
+    }
 }

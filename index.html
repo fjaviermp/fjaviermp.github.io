@@ -2,97 +2,111 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" href="estilos/estilos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>fjaviermp Web</title>
   </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <ul>
-                <li>
-                    <span>fjaviermp</span>
-                </li>
-            
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
+    <header class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="background-color: rgba(6, 23, 39, 0.5) !important;">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">fjaviermp</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                <li>
-                    <a href="#sobremi">Sobre mí</a>
-                </li>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
 
-                <li>
-                    <a href="#servicios">Servicios</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
 
-                <li>
-                    <a href="#rrss">RRSS</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobremi">Sobre mí</a>
+                    </li>
 
-            </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicios">Servicios</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#rrss">RRSS</a>
+                    </li>
+                </ul>
+              </div>
+            </div>
         </nav>
-        
-        <img src="img/montanap.jpg" alt="">
+    </header>
 
-        <div id="perfil">
-            <img src="img/foto_perfil.jpg" alt="">
+    <section class="portada">
+        
+        <div>
+            <img class="img-portada" src="img/montanap.jpg" alt="">
+        </div>
+
+        <div class="perfil">
+            <img class="img-fluid" src="img/foto_perfil.jpg" alt="">
             <h1>FJavierMP</h1>
             <h2>Desarrollador Web</h2>
         </div>
 
-    </header>
-    
-    <article class="article presentacion" id="sobremi">
-            <div class="foto_grande">
-                <img src="img/foto_perfil.jpg" alt="">
-            </div>
+    </section>
+            
+    <section class="presentacion" id="sobremi">
+        <img class="img-present img-fluid" src="img/foto_perfil.jpg" alt="">
+                    
             <div class="texto_derecha">
-                <span>Conóceme</span>
-                <h1>Sobre mi</h1>
-                <span class="texto_presentacio">
+                <div class="titulo-present">
+                    <span>Conóceme</span>
+                    <h1>Sobre mi</h1>
+                </div>
+
+                <p id="texto_present">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur minima eveniet mollitia fugiat architecto!
                     Quia unde, est totam reprehenderit cupiditate sint, et dolores necessitatibus dignissimos voluptatibus sed minus soluta similique.
-                </span>
-                <div class="tarjeta_datos">
+                </p>
+
+                <div id="tarjeta_datos">
                     <div class="dato">
-                        <span class="pregunta">Nombre:</span>
-                        <span class="respuesta">Francisco Javier</span>
+                        <p class="pregunta">Nombre:</p>
+                        <p class="respuesta">Francisco Javier</p>
                     </div>              
                     
                     <div class="dato">
-                        <span class="pregunta">Teléfono:</span>
-                        <span class="respuesta">+34 649 14 28 39</span>
+                        <p class="pregunta">Teléfono:</p>
+                        <p class="respuesta">649 14 28 39</p>
                     </div>
 
                     <div class="dato">
-                        <span class="pregunta">Idiomas:</span>
-                        <span class="respuesta">Inglés C1 certificado</span>
+                        <p class="pregunta">Edad:</p>
+                        <p class="respuesta">20 años</p>
                     </div>
 
                     <div class="dato">
-                        <span class="pregunta">Email:</span>
-                        <span class="respuesta">javimartinezplaza@gmail.com</span>
+                        <p class="pregunta">Ciudad:</p>
+                        <p class="respuesta">Almería</p>
                     </div>
 
-                    <div class="dato">
-                        <span class="pregunta">Edad:</span>
-                        <span class="respuesta">20</span>
+                    <div class="dato" id="idiomas">
+                        <p class="pregunta">Idiomas:</p>
+                        <p class="respuesta">Inglés C1 certificado</p>
                     </div>
 
-                    <div class="dato">
-                        <span class="pregunta">Ciudad:</span>
-                        <span class="respuesta">Almería (España)</span>
+                    <div class="dato" id="email">
+                        <p class="pregunta">Email:</p>
+                        <p class="respuesta">fjaviermpinf@gmail.com</p>
                     </div>
                 </div>
             </div>
-    </article>
+    </section>
 
     <article class="article" id="servicios">
     </article>
 
     <footer class="footer" id="rrss">
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
