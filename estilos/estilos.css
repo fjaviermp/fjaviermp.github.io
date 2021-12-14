@@ -1,6 +1,18 @@
+p{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
 body{
-    background-color: #1E2233 !important;
     overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 .navbar ul li{
@@ -13,6 +25,7 @@ body{
 }
 
 section{
+    color: white;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -54,14 +67,21 @@ section{
     padding: 0.25rem;
 }
 
-.presentacion{
-    color: white;
-    background-color: #1E2233 !important;
-    display: flex;
+.content{
     width: 80%;
+    display: flex;
     margin: 0 auto;
-    flex-direction: row;
-    flex-wrap: nowrap;
+}
+
+#presentacion{
+    background-color: #1E2233 !important;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#servicios{
+    background-color: #24273D !important;
     align-content: center;
     justify-content: center;
     align-items: center;
@@ -72,7 +92,7 @@ section{
     margin: 3em !important;
 }
 
-.titulo-present span{
+.titulo-seccion span{
     color: orangered;
     font-weight: bolder;
 }
@@ -87,6 +107,9 @@ section{
     flex-direction: row;
     flex-wrap: wrap;
     padding: 3em;
+}
+
+#tarjeta_datos, .servicio{
     border: solid 1px orangered;
     border-radius: 10px;
 }
@@ -99,18 +122,29 @@ section{
     font-weight: bold;
 }
 
-@media only screen and (max-width: 768px){
-    .img-present{
-        display: none;
-    }
+.tarjetas_servicios{
+    display: flex;
+    flex-wrap: wrap;
+}
 
-    #tarjeta_datos{
-        padding: 0.5em;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-    }
+.servicio{
+    padding: 1em;
+    width: 30%;
+}
 
+.servicio p{
+    margin-bottom: 0 !important;
+}
+
+.servicio i{
+    display: flex;
+    justify-content: center;
+    color: orangered;
+    text-shadow: 1px 1px 1px #FD5C55;
+    font-size: 4em;
+}
+
+@media only screen and (max-width: 1310px){
     .dato p{
         margin-block-start: 0 !important;
         margin-block-end: 0 !important;
@@ -122,5 +156,20 @@ section{
 
     #email, #idiomas{
         width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1020px){
+    .img-present{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    #tarjeta_datos{
+        padding: 0.5em;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
     }
 }
