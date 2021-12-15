@@ -109,9 +109,10 @@ section{
     padding: 3em;
 }
 
-#tarjeta_datos, .servicio{
+#tarjeta_datos, .servicio , .carta_serv{
     border: solid 1px orangered;
     border-radius: 10px;
+    margin: 1rem;
 }
 
 .dato{
@@ -132,12 +133,17 @@ section{
     width: 30%;
 }
 
-.servicio p{
+.carta_serv{
+    width: 100%;
+    padding: 1em;
+}
+
+.servicio p, #desc_serv{
     margin-bottom: 0 !important;
 }
 
-.servicio i{
-    display: flex;
+.servicio i, .icono_serv{
+    display: flex !important;
     justify-content: center;
     color: orangered;
     text-shadow: 1px 1px 1px #FD5C55;
@@ -165,11 +171,32 @@ section{
     }
 }
 
+@media only screen and (max-width: 900px){
+    .servicio{
+        padding: 0.5;
+        width: 40%;
+    }
+
+    .servicio i{
+        font-size: 2em;
+    }
+}
+
 @media only screen and (max-width: 768px){
     #tarjeta_datos{
         padding: 0.5em;
         justify-content: center;
         align-items: center;
         align-content: center;
+    }
+}
+
+@media only screen and (max-width: 570px){
+    .servicio h3{
+        text-align: center;
+    }
+
+    .servicio p{
+        display: none;
     }
 }
