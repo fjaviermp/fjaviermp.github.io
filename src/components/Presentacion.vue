@@ -21,7 +21,7 @@
     <section id="presentacion">
         <div class="content">
             <div class="img-present">
-                <img class="img-fluid" src="img/foto_perfil3.jpg" alt="">
+                <img class="img-fluid" src="/img/foto_perfil3.jpg" alt="">
             </div>
                             
             <div class="texto-derecha">

@@ -1,7 +1,7 @@
 <template>
     <section id="portada">
         <div class="perfil">
-            <img class="img-fluid" src="img/foto_perfil.jpg" alt="">
+            <img class="img-fluid" src="/img/foto_perfil.jpg" alt="">
             <h1>FJavierMP</h1>
             <h2>Desarrollador Web</h2>
         </div>
