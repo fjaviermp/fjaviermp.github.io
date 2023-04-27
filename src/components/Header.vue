@@ -66,7 +66,7 @@ export default {
 
 <style scoped>
 .img-portada{
-    background-image: url("../img/montana.jpg");
+    background-image: url("/img/montana.jpg");
     height: 100vh;
     width: 100%;
     background-position: center;
