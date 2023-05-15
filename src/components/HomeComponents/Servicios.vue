@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import ServicioCard from './HomeComponents/ServicioCard.vue'
+    import ServicioCard from './ServicioCard.vue'
 
 </script>
 <template>
@@ -19,9 +19,9 @@
 
                 <ServicioCard icon="fa-brands fa-css3-alt" title="CSS" desc="Estilos para ajustar la presentación de la apliación"></ServicioCard>
 
-                <ServicioCard icon="fa-brands fa-vuejs" title="Vue.js" desc="Famework de JavaScript para diseñar aplicaciones de una sola página"></ServicioCard>
+                <ServicioCard icon="fa-brands fa-vuejs" title="Vue.js" desc="Famework de JavaScript"></ServicioCard>
 
-                <ServicioCard icon="fa-brands fa-git-alt" title="Git" desc="Herramienta para el control ve versiones"></ServicioCard>
+                <ServicioCard icon="fa-brands fa-git-alt" title="Git" desc="Herramienta para el control de versiones"></ServicioCard>
                 
             </div>
         </div>

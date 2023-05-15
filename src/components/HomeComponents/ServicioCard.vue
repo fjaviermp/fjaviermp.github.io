@@ -7,7 +7,7 @@
 </script>
 
 <script lang="ts">
-    export default{
+    export default {
         properties: ['icon','text','desc'],
     }
 </script>

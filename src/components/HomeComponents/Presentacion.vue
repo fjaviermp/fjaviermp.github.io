@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import Datacard from './HomeComponents/Datacard.vue'
+    import Datacard from './Datacard.vue'
     const props = defineProps({
         age: String,
     });

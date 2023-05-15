@@ -4,6 +4,7 @@
             <img class="img-fluid" src="/img/foto_perfil.jpg" alt="">
             <h1>FJavierMP</h1>
             <h2>Desarrollador Web</h2>
+            <h3>Almería</h3>
         </div>
     </section>
 </template>

@@ -5,10 +5,9 @@
         answer: String,
     });
 </script>
-
 <script lang="ts">
-    export default{
-        properties: ['id','question','answer'],
+    export default {
+        properties: ['id', 'question', 'answer'],
     }
 </script>
 
