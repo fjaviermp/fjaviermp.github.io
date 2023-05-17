@@ -29,24 +29,30 @@
 </template>
 
 <style>
-#servicios{
-    background-color: #24273D !important;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    padding: 1em 0;
-}
+    #servicios{
+        background-color: #24273D !important;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        padding: 1em 0;
+    }
 
-.servicio {
-    border: solid 1px var(--primary-color);
-    border-radius: 10px;
-    margin: 1rem;
-    padding: 1em;
-    width: 30%;
-}
+    .servicio {
+        border: solid 1px var(--primary-color);
+        border-radius: 10px;
+        margin: 1rem;
+        padding: 1em;
+        width: 30%;
+    }
 
-.tarjetas_servicios{
-    display: flex;
-    flex-wrap: wrap;
-}
+    .tarjetas_servicios{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    @media only screen and (max-width: 570px){
+        #servicios{
+            min-height: fit-content;
+        }
+    }
 </style>

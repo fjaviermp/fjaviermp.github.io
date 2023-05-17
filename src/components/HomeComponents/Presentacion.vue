@@ -110,5 +110,9 @@
     #tarjeta_datos{
         margin: 2em 0 0.5em 0;
     }
+    #presentacion>.content{
+        width: 100%;
+        padding: 1em 0 1em 0;
+    }
 }
 </style>
