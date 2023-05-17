@@ -31,9 +31,24 @@
             
         },
         methods: {
-            setDesc(i: Number){
-                console.log(i);                
+            setDesc(i: number){
+                const expDetail = document.getElementById('experienciaChangeDesc') as any;
+                expDetail.innerHTML = this.experiences[i].desc;
+                
+                const expName = document.getElementById('experienciaChangeName') as any;
+                expName.innerHTML = this.experiences[i].name;
+
+                document.getElementsByClassName("experiencePoint")[i].classList.add("experiencePointAnimated")
             },
+            clearDesc(i: number){
+                const experieneDetail = document.getElementById('experienciaChangeDesc') as any;
+                experieneDetail.innerHTML = "🔎Explora a través de mis años en el mundo de la programación🔍";
+
+                const expName = document.getElementById('experienciaChangeName') as any;
+                expName.innerHTML = ""; 
+
+                document.getElementsByClassName("experiencePoint")[i].classList.remove("experiencePointAnimated")
+            }
         }
     }
 </script>
@@ -42,14 +57,15 @@
     <section id="experienciasPanel">
         <div id="experiencias">
             <template v-for="(experience, index) in experiences" :key="experience.id">
-                <ExperienceTile @click="setDesc(index)" :id="experience.id" :year="experience.year" :ref="experience.desc" :name="experience.name"></ExperienceTile>
+                <ExperienceTile @mouseenter="setDesc(index)" @mouseleave="clearDesc(index)" :id="experience.id" :year="experience.year" :name="experience.name"></ExperienceTile>
                 <ExperienceRoad v-if="experience.id < experiences.length" class="roadImpair"></ExperienceRoad>
                 <ExperienceRoad v-if="experience.id < experiences.length" class="roadPair"></ExperienceRoad>
             </template>
         </div>
         <div id="detallesContainer">
             <div id="experienciasDetalles">
-                <h3>PASA EL CURSOR POR ENCIMA PARA VER MÁS DETALLES</h3>
+                <h2 id="experienciaChangeName"></h2>
+                <h4 id="experienciaChangeDesc">🔎Explora a través de mis años en el mundo de la programación🔍</h4>
             </div>
         </div>
     </section>
@@ -60,6 +76,16 @@
         display: flex;
         background-color: rgba(30, 34, 51, 0.6);
         flex-direction: column;
+    }
+    
+
+    #experienciaChangeDesc, #experienciaChangeName{
+        text-align: center;
+    }
+
+    #experienciaChangeName{
+        text-decoration: underline var(--primary-color);
+        text-underline-offset: 0.3em;
     }
 
     #experiencias, #detallesContainer{
@@ -80,6 +106,7 @@
         border-width: 4px 4px 0 4px;
         padding: 2em;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
     }
@@ -94,13 +121,14 @@
         #experiencias{
             flex-direction: column;
             width: 40%;
+            justify-content: flex-end;
         }
         #experienciasDetalles{
             position: static;
             border-width: 3px 0 3px 3px;
             border-radius: 25px 0 0 25px;
             height: 70%;
-            width: 90%;
+            width: 100%;
             padding: 0.5em;
             justify-content: center;
             align-items: center;
