@@ -69,7 +69,7 @@ export default {
                         </li>
     
                         <li class="nav-item dropdown" id="dropdown" v-on:click="rotateIcon">
-                            <a class="nav-link dropdown-toggle menuInactive" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Conóceme
                             </a>
                             <ul class="dropdown-menu" id="dropdownItems" aria-labelledby="navbarDropdownMenuLink">
