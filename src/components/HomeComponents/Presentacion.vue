@@ -21,7 +21,11 @@
     <section id="presentacion">
         <div class="content">
             <div class="img-present">
-                <img class="img-fluid" src="/img/foto_perfil3.jpg" alt="">
+                <img class="img-fluid" src="/img/foto_perfil3.jpg" alt="Imagen de perfil con gafas">
+                <div id="redesSociales" class="d-flex justify-contet-between mt-4">
+                    <a href="https://github.com/fjaviermp/" class="btn btn-primary btn-myPrimary"><i class="fa-brands fa-github"></i> | GitHub</a>
+                    <a href="https://www.linkedin.com/in/fjaviermp/" class="btn btn-primary btn-myPrimary"><i class="fa-brands fa-github"></i> | LinkedIn</a>
+                </div>
             </div>
                             
             <div class="texto-derecha">
@@ -82,7 +86,21 @@
     padding: 3em;
     border: solid 1px var(--primary-color);
     border-radius: 10px;
-    margin: 1rem;
+    margin: 1rem 0;
+}
+a.btn-myPrimary{
+    margin: 0 auto;
+    width: 45%;
+    text-decoration: none;
+    color: white;
+    background-color: var(--primary-color);
+    border-color: #d53b03;
+}
+
+a.btn-myPrimary:hover{
+    background-color: #d53b03;
+    border-color: var(--primary-color);
+    font-weight: bolder;
 }
 @media only screen and (max-width: 1310px){
     #tarjeta_datos{
@@ -94,11 +112,10 @@
 }
 
 @media only screen and (max-width: 768px){
-    .img-present{
+    .img-present img{
         display: none;
     }
-
-    .texto-derecha{
+    .texto-derecha, .img-present{
         width: 80%;
     }
 }
@@ -113,6 +130,10 @@
     #presentacion>.content{
         width: 100%;
         padding: 1em 0 1em 0;
+    }
+    #texto_present{
+        text-align:justify;
+        word-break:keep-all;
     }
 }
 </style>
