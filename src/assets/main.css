@@ -24,8 +24,12 @@ section{
   color: var(--text-color);
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 75vh;
   justify-content: center;
+}
+
+section:first-of-type{
+  min-height: 100vh;
 }
 
 p{
