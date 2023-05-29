@@ -16,8 +16,8 @@ import img2 from '../assets/projects/qrcelia.jpg'
         data() {
             const jobs = [
                 {
-                    id: img0,
-                    portrait: "/src/assets/projects/hefadi.jpg",
+                    id: 0,
+                    portrait: img0,
                     title: "Hefadi.es",
                     desc: "Página web de la Hermandad Farmacéutica Digital. Cabe destacar que la gran mayoría de información se obtiene de una API externa al sitio web. Además, cuenta con un sencillo panel de administración desarrollado en PHP para añadir, editar o eliminar eventos y podcast.",
                     tech: "PHP, JavaScript, CSS, MySQL",
@@ -25,8 +25,8 @@ import img2 from '../assets/projects/qrcelia.jpg'
                     github: "",
                 },
                 {
-                    id: img1,
-                    portrait: "/src/assets/projects/qrcelia.jpg",
+                    id: 1,
+                    portrait: img2,
                     title: "QrCelia",
                     desc: "Gestor de contenidos desarrollado para fácilmente crear un sitio web con todo lo que ello conlleva: roles, panel de administración, categorías, entradas, personalización...todo ello con el añadido de crear automáticamente un código QR para cada entrada del sitio web.",
                     tech: "Laravel 7, JavaScript, Vue 2, MySQL, AJAX",
@@ -34,8 +34,8 @@ import img2 from '../assets/projects/qrcelia.jpg'
                     github: "https://github.com/FMRedondo/QRCelia",
                 },
                 {
-                    id: img2,
-                    portrait: "/src/assets/projects/linku.jpg",
+                    id: 2,
+                    portrait: img1,
                     title: "Linku.es",
                     desc: "Web de empresa mayorista en telefonía móvil, por lo que los precios sólo son visibles para usuarios registrados. Además de la web y su panel de administración, existen diversos conectores para enviar pedidos, cambios de stock o información de clientes al Sistema de Contabilidad",
                     tech: "Laravel 5, JavaScript, SQL Server, MySQL, Python, Java, Bootstrap",
