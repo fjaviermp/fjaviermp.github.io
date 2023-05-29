@@ -97,5 +97,15 @@
             75% { transform: translateX(-20px) }
             100% { transform: translateX(0px) }
         }
+        @media only screen and (max-width: 680px){
+            #experiencias{
+                justify-content: center;
+            }
+            .experienceTile{
+                width: 4em;
+                height: 4em;
+                margin: 0;
+            }
+        }
     }
 </style>
