@@ -13,7 +13,7 @@
 <template>
     <div class="projectCard">
         <a :href="website" >
-            <img class="img-fluid" :src="portrait" alt="">
+            <img class="img-fluid" :src="portrait" :alt="title">
         </a>
         <div class="projectDesc px-4">
             <div class="projectHeader">
