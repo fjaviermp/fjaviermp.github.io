@@ -3,6 +3,11 @@ import { RouterLink, RouterView } from 'vue-router'
 import Header from '../components/Header.vue'
 import ImgPortada from '../components/ImgPortada.vue'
 import ProjectCard from '../components/ProjectsComponents/ProjectCard.vue'
+
+import img0 from '../assets/projects/hefadi.jpg'
+import img1 from '../assets/projects/linku.jpg'
+import img2 from '../assets/projects/qrcelia.jpg'
+
 </script>
 
 <script lang="ts">
@@ -11,7 +16,7 @@ import ProjectCard from '../components/ProjectsComponents/ProjectCard.vue'
         data() {
             const jobs = [
                 {
-                    id: 0,
+                    id: img0,
                     portrait: "/src/assets/projects/hefadi.jpg",
                     title: "Hefadi.es",
                     desc: "Página web de la Hermandad Farmacéutica Digital. Cabe destacar que la gran mayoría de información se obtiene de una API externa al sitio web. Además, cuenta con un sencillo panel de administración desarrollado en PHP para añadir, editar o eliminar eventos y podcast.",
@@ -20,7 +25,7 @@ import ProjectCard from '../components/ProjectsComponents/ProjectCard.vue'
                     github: "",
                 },
                 {
-                    id: 1,
+                    id: img1,
                     portrait: "/src/assets/projects/qrcelia.jpg",
                     title: "QrCelia",
                     desc: "Gestor de contenidos desarrollado para fácilmente crear un sitio web con todo lo que ello conlleva: roles, panel de administración, categorías, entradas, personalización...todo ello con el añadido de crear automáticamente un código QR para cada entrada del sitio web.",
@@ -29,7 +34,7 @@ import ProjectCard from '../components/ProjectsComponents/ProjectCard.vue'
                     github: "https://github.com/FMRedondo/QRCelia",
                 },
                 {
-                    id: 2,
+                    id: img2,
                     portrait: "/src/assets/projects/linku.jpg",
                     title: "Linku.es",
                     desc: "Web de empresa mayorista en telefonía móvil, por lo que los precios sólo son visibles para usuarios registrados. Además de la web y su panel de administración, existen diversos conectores para enviar pedidos, cambios de stock o información de clientes al Sistema de Contabilidad",
