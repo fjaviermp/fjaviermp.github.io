@@ -74,7 +74,6 @@
 <style>
     #experienciasPanel{
         display: flex;
-        background-color: rgba(30, 34, 51, 0.6);
         flex-direction: column;
     }
     

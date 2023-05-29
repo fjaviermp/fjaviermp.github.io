@@ -12,7 +12,7 @@
 
 <template>
     <div class="projectCard">
-        <a href="https://qrcelia.iescelia.org/" >
+        <a :href="website" >
             <img class="img-fluid" :src="portrait" alt="">
         </a>
         <div class="projectDesc px-4">
@@ -23,8 +23,8 @@
             <p class="description"> {{ desc }}</p>
         </div>
         <div class="projectWebsites p-4">
-            <a :href="github" class="btn btn-primary btn-myPrimary"><i class="fa-brands fa-github"></i> | Ver en GitHub</a>
-            <a :href="website" class="btn btn-primary btn-myPrimary"><i class="fa-sharp fa-solid fa-earth-americas"></i> | Ver sitio web</a>
+            <a v-if="github" :href="github" class="btn btn-primary btn-myPrimary"><i class="fa-brands fa-github"></i> | Ver en GitHub</a>
+            <a v-if="website" :href="website" class="btn btn-primary btn-myPrimary"><i class="fa-sharp fa-solid fa-earth-americas"></i> | Ver sitio web</a>
         </div>
     </div>
 </template>
@@ -38,6 +38,10 @@
         justify-content: center;
         background-color: white;
         margin: 2em;
+    }
+
+    .projectCard img{
+        border-bottom: 0.3em solid var(--primary-color);
     }
 
     .projectCard h1{
@@ -59,6 +63,7 @@
     }
 
     a.btn-myPrimary{
+        margin: 0 auto;
         width: 45%;
         text-decoration: none;
         color: white;
@@ -69,6 +74,7 @@
     a.btn-myPrimary:hover{
         background-color: #d53b03;
         border-color: var(--primary-color);
+        font-weight: bolder;
     }
 
     .technologies{
@@ -79,5 +85,40 @@
 
     .projectHeader{
         margin-bottom: 1em;
+    }
+
+    .projectDesc .description{
+        text-align:justify;
+        word-break: break-all;
+    }
+
+    @media (max-width: 1158px) {
+        .projectCard{
+            width: 40%;
+            margin: 1em;
+        }
+    }
+
+    @media (max-width: 750px) {
+        .projectCard{
+            width: 90%;
+        }
+        .projectHeader{
+            margin-bottom: 0 !important;
+        }
+        .projectCard .projectWebsites{
+            flex-direction: column;
+            justify-content: center;
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+        .projectWebsites{
+            padding: 0 !important;
+        }
+        a.btn-myPrimary{
+            width: 80%;
+            margin: 0.5em 1em;
+        }
+
     }
 </style>

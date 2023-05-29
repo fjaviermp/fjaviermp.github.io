@@ -13,7 +13,8 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    position: absolute;
+    background-attachment: fixed;
+    position: fixed;
     z-index: -1;
 }
 </style>
