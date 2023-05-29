@@ -97,15 +97,21 @@
             75% { transform: translateX(-20px) }
             100% { transform: translateX(0px) }
         }
-        @media only screen and (max-width: 680px){
-            #experiencias{
+    }
+    @media only screen and (max-width: 680px){
+            div#experiencias{
+                display: flex;
                 justify-content: center;
+                align-items: center;
+                margin-top: 2em;
             }
-            .experienceTile{
+            .experienceTile, .experiencePoint{
                 width: 4em;
                 height: 4em;
                 margin: 0;
             }
+            .experienceRoad.roadPair{
+                height: 3em;
+            }
         }
-    }
 </style>
