@@ -3,7 +3,7 @@
   <ImgPortada />
   <div id="projectsGrid">
     <template
-      v-for="(job, index) in jobs"
+      v-for="(job) in jobs"
       :key="job.id"
     >
       <ProjectCard
@@ -20,14 +20,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import Header from '@/components/Header.vue'
-import ImgPortada from '@/components/ImgPortada.vue'
-import ProjectCard from '@/components/ProjectsComponents/ProjectCard.vue'
+import { ref } from 'vue';
+import Header from '@/components/Header.vue';
+import ImgPortada from '@/components/ImgPortada.vue';
+import ProjectCard from '@/components/ProjectsComponents/ProjectCard.vue';
 // Images
-import img0 from '@/assets/projects/hefadi.jpg'
-import img1 from '@/assets/projects/linku.jpg'
-import img2 from '@/assets/projects/qrcelia.jpg'
+import img0 from '@/assets/projects/hefadi.jpg';
+import img1 from '@/assets/projects/linku.jpg';
+import img2 from '@/assets/projects/qrcelia.jpg';
 // Job List
 const jobs = ref([
   {

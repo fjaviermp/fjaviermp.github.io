@@ -7,7 +7,6 @@
 </template>
 
 <script setup lang="ts">
-
 import ImgPortada from "@/components/ImgPortada.vue";
 import Header from '@/components/Header.vue';
 import Portada from '@/components/HomeComponents/Portada.vue';
