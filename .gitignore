@@ -27,3 +27,4 @@ dist
 *.sln
 *.sw?
 well-know
+.env
