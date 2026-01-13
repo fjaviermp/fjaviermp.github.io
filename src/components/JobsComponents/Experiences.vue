@@ -1,24 +1,52 @@
 <template>
-  <section id="experienciasPanel">
+  <section
+    id="experienciasPanel"
+    aria-labelledby="experiencias-title"
+    itemscope
+    itemtype="https://schema.org/ItemList"
+  >
+    <header class="visually-hidden">
+      <h2 id="experiencias-title" itemprop="name">Hoja de ruta de conocimientos</h2>
+    </header>
     <div id="experiencias">
       <template v-for="(experience, index) in experiences" :key="experience.id">
-        <ExperienceTile @mouseenter="setDesc(index)" @mouseleave="clearDesc(index)" :id="experience.id"
-          :year="experience.year" :name="experience.name"></ExperienceTile>
-        <ExperienceRoad v-if="experience.id < experiences.length" class="roadImpair"></ExperienceRoad>
-        <ExperienceRoad v-if="experience.id < experiences.length" class="roadPair"></ExperienceRoad>
+        <div
+          class="experienceGroup"
+          itemprop="itemListElement"
+          itemscope
+          itemtype="https://schema.org/ListItem"
+        >
+          <meta itemprop="position" :content="String(index + 1)">
+          <ExperienceTile
+            :year="experience.year"
+            :name="experience.name"
+            :desc="experience.desc"
+            :active="activeIndex === index"
+            controls-id="experienciasDetalles"
+            @mouseenter="setActive(index)"
+            @focus="setActive(index)"
+            @click="setActive(index)"
+            @mouseleave="clearActive"
+            @blur="clearActive"
+          />
+          <ExperienceRoad v-if="experience.id < experiences.length" class="roadImpair"></ExperienceRoad>
+          <ExperienceRoad v-if="experience.id < experiences.length" class="roadPair"></ExperienceRoad>
+        </div>
       </template>
     </div>
     <div id="detallesContainer">
       <div id="experienciasDetalles">
-        <h2 id="experienciaChangeName"></h2>
-        <h4 id="experienciaChangeDesc">🔎Explora a través de mis años en el mundo de la programación🔍</h4>
+        <h3 id="experienciaChangeName">{{ activeExperience?.name ?? '' }}</h3>
+        <p id="experienciaChangeDesc">
+          {{ activeExperience?.desc ?? "🔎Explora a través de mis años en el mundo de la programación🔍" }}
+        </p>
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import ExperienceTile from '@/components/JobsComponents/ExperienceTile.vue';
 import ExperienceRoad from '@/components/JobsComponents/ExperienceRoad.vue';
 
@@ -43,27 +71,24 @@ const experiences = ref([
     id: 5, year: 2023, name: 'Vue 3 & Router',
     desc: 'Siempre es buen momento de actualizarse y ampliar conocimientos',
   },
+  {
+    id: 6, year: 2025, name: 'Clean Code & SOLID',
+    desc: 'Es momento de apostar por código de calidad siguiendo principios SOLID, arquitectura moderna usando composables reutilizables y test unitarios',
+  }
 ]);
 
-const setDesc = (i: number) => {
-  const expDetail = document.getElementById('experienciaChangeDesc') as any;
-  expDetail.innerHTML = experiences.value[i].desc;
+const activeIndex = ref<number | null>(null);
+const activeExperience = computed(() =>
+  activeIndex.value === null ? null : experiences.value[activeIndex.value]
+);
 
-  const expName = document.getElementById('experienciaChangeName') as any;
-  expName.innerHTML = experiences.value[i].name;
+const setActive = (i: number) => {
+  activeIndex.value = i;
+};
 
-  document.getElementsByClassName("experiencePoint")[i].classList.add("experiencePointAnimated")
-}
-
-const clearDesc = (i: number) => {
-  const experieneDetail = document.getElementById('experienciaChangeDesc') as any;
-  experieneDetail.innerHTML = "🔎Explora a través de mis años en el mundo de la programación🔍";
-
-  const expName = document.getElementById('experienciaChangeName') as any;
-  expName.innerHTML = "";
-
-  document.getElementsByClassName("experiencePoint")[i].classList.remove("experiencePointAnimated")
-}
+const clearActive = () => {
+  activeIndex.value = null;
+};
 </script>
 
 <style>
@@ -72,6 +97,9 @@ const clearDesc = (i: number) => {
   flex-direction: column;
 }
 
+.experienceGroup {
+  display: contents;
+}
 
 #experienciaChangeDesc,
 #experienciaChangeName {
@@ -89,6 +117,10 @@ const clearDesc = (i: number) => {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+}
+
+#experienciaChangeDesc {
+  margin: 0;
 }
 
 #experienciasDetalles {

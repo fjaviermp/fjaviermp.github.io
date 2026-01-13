@@ -1,25 +1,49 @@
 <template>
-  <div class="experienceTile">
-    <div class="experiencePoint">
-      <p>{{ year }}</p>
+  <button
+    class="experienceTile"
+    type="button"
+    itemprop="item"
+    itemscope
+    itemtype="https://schema.org/Thing"
+    :aria-pressed="active ? 'true' : 'false'"
+    :aria-controls="controlsId"
+  >
+    <div class="experiencePoint" :class="{ experiencePointAnimated: active }">
+      <time :datetime="String(year)">{{ year }}</time>
     </div>
     <div class="experienceDesc d-flex justify-content-center w-100 mt-2">
-      <h4> {{ name }}</h4>
+      <h3 itemprop="name">{{ name }}</h3>
+      <p class="visually-hidden" itemprop="description">{{ desc }}</p>
     </div>
-  </div>
+  </button>
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
-  year: Number,
-  name: String,
-  desc: String,
+defineProps({
+  year: { type: Number, required: true },
+  name: { type: String, required: true },
+  desc: { type: String, required: true },
+  active: { type: Boolean, default: () => false },
+  controlsId: { type: String, required: true },
 });
 </script>
 
 <style>
 .experienceTile {
   width: 10%;
+}
+
+.experienceTile {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: inherit;
+}
+
+.experienceTile:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 4px;
+  border-radius: 12px;
 }
 
 .experienceTile:hover {
@@ -60,7 +84,7 @@ const props = defineProps({
   max-width: 20em;
 }
 
-.experiencePoint p {
+.experiencePoint time {
   color: rgba(30, 34, 51, 1);
   font-weight: bolder;
   font-size: larger;

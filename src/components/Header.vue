@@ -1,8 +1,9 @@
 <template>
-  <header class="container">
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top">
+  <div class="container">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top" aria-label="Navegación principal">
       <div class="container">
-        <router-link class="navbar-brand" to="/" name="home">fjaviermp</router-link>
+        <router-link class="navbar-brand" to="/" aria-label="Inicio: fjaviermp">fjaviermp</router-link>
         <button
           id="menuBTN"
           class="navbar-toggler custom-toggler"
@@ -19,36 +20,43 @@
           <ul class="navbar-nav mb-2 mb-lg-0">
 
             <li class="nav-item">
-              <router-link class="nav-link" to="/" name="home">Inicio</router-link>
+              <router-link class="nav-link" to="/" aria-label="Ir a Inicio">Inicio</router-link>
             </li>
 
             <li
               id="dropdown"
               class="nav-item dropdown"
               @click="rotateIcon">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
+              <button
+                class="nav-link dropdown-toggle"
+                type="button"
+                id="navbarDropdownMenuLink"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="dropdownItems"
+              >
                 Conóceme
-              </a>
+              </button>
               <ul class="dropdown-menu" id="dropdownItems" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="/#presentacion">Sobre mí</a></li>
-                <li><a class="dropdown-item" href="/#servicios">Servicios</a></li>
+                <li><a class="dropdown-item" href="#presentacion">Sobre mí</a></li>
+                <li><a class="dropdown-item" href="#servicios">Servicios</a></li>
               </ul>
             </li>
 
             <li class="nav-item">
-              <router-link class="nav-link" to="/experiencia" name="jobs">Experiencia</router-link>
+              <router-link class="nav-link" to="/experiencia" aria-label="Ir a Experiencia">Experiencia</router-link>
             </li>
 
             <li class="nav-item">
-              <router-link class="nav-link" to="/proyectos" name="projects">Proyectos</router-link>
+              <router-link class="nav-link" to="/proyectos" aria-label="Ir a Proyectos">Proyectos</router-link>
             </li>
 
           </ul>
         </div>
       </div>
     </nav>
-  </header>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -56,28 +64,30 @@ import { ref, onMounted, onUnmounted } from 'vue';
 const dropActive = ref(false);
 
 const handleScroll = () => {
-  const dropdown = document.getElementById("dropdownItems")
+  const dropdown = document.getElementById("dropdownItems");
   const navbar = document.getElementById("navbar");
 
   if (window.scrollY > 0) {
-    navbar.style.backgroundColor = "rgb(6,23,39)";
-    dropdown.style.backgroundColor = "rgb(6,23,39)";
+    if (navbar) navbar.style.backgroundColor = "rgb(6,23,39)";
+    if (dropdown) dropdown.style.backgroundColor = "rgb(6,23,39)";
   } else {
-    dropdown.style.backgroundColor = "rgba(6, 23, 39, 0.5)";
-    navbar.style.backgroundColor = "rgba(6, 23, 39, 0.5)";
+    if (dropdown) dropdown.style.backgroundColor = "rgba(6, 23, 39, 0.5)";
+    if (navbar) navbar.style.backgroundColor = "rgba(6, 23, 39, 0.5)";
   }
 }
 
 const changeBG = () => {
-  const menuButton = document.getElementById("menuBTN")
+  const menuButton = document.getElementById("menuBTN");
   const navbar = document.getElementById("navbar");
 
+  if (!menuButton || !navbar) return;
   if (!menuButton.classList.contains("collapsed")) navbar.style.backgroundColor = "rgb(6,23,39)";
   else navbar.style.backgroundColor = "rgba(6, 23, 39, 0.5)";
 }
 
 const rotateIcon = () => {
-  const dropdownButton = document.getElementById("navbarDropdownMenuLink")
+  const dropdownButton = document.getElementById("navbarDropdownMenuLink");
+  if (!dropdownButton) return;
   if (dropActive.value) {
     dropdownButton.classList.remove("menuActive");
     dropdownButton.classList.add("menuInactive");
@@ -95,6 +105,31 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll));
 </script>
 
 <style scoped>
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 0.75rem;
+  background: rgb(6,23,39);
+  color: white;
+  z-index: 2000;
+  border-radius: 0.25rem;
+}
+
+#dropdown {
+  display: flex;
+}
+
 #navbar,
 .dropdown-menu,
 .dropdown-menu li .dropdown-item:hover {
@@ -110,9 +145,26 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll));
   font-size: x-large
 }
 
+.navbar button.nav-link {
+  color: white !important;
+  font-size: x-large;
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.navbar button.nav-link:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 4px;
+}
+
 .navbar a:hover {
   color: var(--primary-color) !important;
   font-size: x-large
+}
+
+.navbar button.nav-link:hover {
+  color: var(--primary-color) !important;
 }
 
 .custom-toggler .navbar-toggler-icon {
@@ -143,6 +195,9 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll));
   #navbarSupportedContent>ul {
     justify-content: center;
     align-items: center;
+  }
+  #dropdown {
+    flex-direction: column;
   }
 }
 

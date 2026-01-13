@@ -1,9 +1,14 @@
 <template>
-  <ImgPortada />
-  <Header />
-  <Portada />
-  <Presentacion />
-  <Servicios />
+  <header role="banner">
+    <ImgPortada />
+    <Header />
+  </header>
+
+  <main id="contenido" role="main">
+    <Portada />
+    <Presentacion />
+    <Servicios />
+  </main>
 </template>
 
 <script setup lang="ts">

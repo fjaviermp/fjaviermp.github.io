@@ -1,16 +1,25 @@
 <template>
-  <div class="servicio">
-    <i :class="icon"></i>
-    <h3>{{ title }}</h3>
-    <p>{{ desc }}</p>
-  </div>
+  <li
+    class="tarjetas_servicios__item"
+    itemprop="itemListElement"
+    itemscope
+    itemtype="https://schema.org/ListItem"
+  >
+    <meta itemprop="position" :content="String(position)">
+    <article class="servicio" itemprop="item" itemscope itemtype="https://schema.org/Thing">
+      <i :class="icon" aria-hidden="true"></i>
+      <h3 itemprop="name">{{ title }}</h3>
+      <p itemprop="description">{{ desc }}</p>
+    </article>
+  </li>
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
-  icon: String,
-  title: String,
-  desc: String,
+defineProps({
+  icon: { type: String, required: true },
+  title: { type: String, required: true },
+  desc: { type: String, default: () => '' },
+  position: { type: Number, required: true },
 });
 </script>
 
@@ -37,7 +46,6 @@ const props = defineProps({
 @media only screen and (max-width: 900px) {
   .servicio {
     padding: 0.5em;
-    width: 40%;
   }
 
   .servicio i {
@@ -48,8 +56,6 @@ const props = defineProps({
 @media only screen and (max-width: 570px) {
   .servicio {
     padding: 0.5em;
-    margin: 0.5em;
-    width: 45%;
   }
 
   .servicio h3 {

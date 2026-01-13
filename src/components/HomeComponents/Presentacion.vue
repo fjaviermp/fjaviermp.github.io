@@ -1,24 +1,56 @@
 <template>
-  <section id="presentacion">
+  <section
+    id="presentacion"
+    aria-labelledby="presentacion-title"
+    itemscope
+    itemtype="https://schema.org/Person"
+  >
     <div class="content">
       <div class="img-present">
-        <img class="img-fluid" src="/img/foto_perfil3.jpg" alt="Imagen de perfil con gafas">
-        <div id="redesSociales" class="d-flex justify-contet-between mt-4">
-          <a href="https://github.com/fjaviermp/" class="btn btn-primary btn-myPrimary"><i
-              class="fa-brands fa-github"></i> | GitHub</a>
-          <a href="https://www.linkedin.com/in/fjaviermp/" class="btn btn-primary btn-myPrimary"><i
-              class="fa-brands fa-github"></i> | LinkedIn</a>
+        <figure>
+          <img
+            class="img-fluid"
+            src="/img/foto_perfil3.jpg"
+            alt="Foto de perfil de Javier (FJavierMP)"
+            loading="lazy"
+            decoding="async"
+            itemprop="image"
+          >
+          <figcaption class="visually-hidden">Foto de perfil de Javier (FJavierMP)</figcaption>
+        </figure>
+
+        <div id="redesSociales" class="d-flex justify-content-between mt-4">
+          <a
+            href="https://github.com/fjaviermp/"
+            class="btn btn-primary btn-myPrimary"
+            target="_blank"
+            rel="me noopener noreferrer"
+            aria-label="Visitar GitHub de fjaviermp (se abre en una pestaña nueva)"
+            itemprop="sameAs"
+          >
+            <i class="fa-brands fa-github" aria-hidden="true"></i> | GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/fjaviermp/"
+            class="btn btn-primary btn-myPrimary"
+            target="_blank"
+            rel="me noopener noreferrer"
+            aria-label="Visitar LinkedIn de fjaviermp (se abre en una pestaña nueva)"
+            itemprop="sameAs"
+          >
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i> | LinkedIn
+          </a>
         </div>
       </div>
 
       <div class="texto-derecha">
-        <div class="titulo-seccion">
+        <header class="titulo-seccion">
           <span>Conóceme</span>
-          <h1>Sobre mi</h1>
-        </div>
+          <h2 id="presentacion-title">Sobre mí</h2>
+        </header>
 
         <div id="texto_present">
-          <p class="mb-4">
+          <p class="mb-4" itemprop="description">
             Soy un chico apasionado por el desarrollo web. Me encanta crear cosas nuevas y emocionantes con
             los conocimientos que he ganado a lo largo de mi vida.
             He trabajado con algunos frameworks y plataformas populares. Además, me siento cómodo
@@ -33,11 +65,11 @@
 
         <div id="tarjeta_datos">
           <Datacard label="nombre" question="Nombre:" answer="Francisco Javier"></Datacard>
-          <Datacard label="tfn" question="Teléfono:" answer="649 14 28 39"></Datacard>
+          <Datacard label="tfn" question="Teléfono:" answer="649 14 28 39" kind="phone" sensitive></Datacard>
           <Datacard label="edad" question="Edad:" :answer="calculatedAge"></Datacard>
           <Datacard label="ciudad" question="Ciudad:" answer="Almería"></Datacard>
           <Datacard label="idiomas" question="Idiomas:" answer="Inglés C1 certificado"></Datacard>
-          <Datacard label="email" question="Email:" answer="fjaviermpinf@gmail.com"></Datacard>
+          <Datacard label="email" question="Email:" answer="fjaviermpinf@gmail.com" kind="email" sensitive></Datacard>
         </div>
       </div>
     </div>
@@ -45,18 +77,15 @@
 </template>
 
 <script setup lang="ts">
-  import { computed } from 'vue';
-  import Datacard from '@/components/HomeComponents/Datacard.vue';
-  const props = defineProps({
-    age: String,
-  });
+import { computed } from 'vue';
+import Datacard from '@/components/HomeComponents/Datacard.vue';
   
-  const calculatedAge = computed(() => {
-    let currentDate = new Date();
-    let birthDate = new Date("2001/02/011");
-    let age = Math.floor((currentDate.getTime() - birthDate.getTime()) / 31557600000);
-    return age.toString() + " años";
-  }); 
+const calculatedAge = computed(() => {
+  const currentDate = new Date();
+  const birthDate = new Date("2001/02/01");
+  const age = Math.floor((currentDate.getTime() - birthDate.getTime()) / 31557600000);
+  return age.toString() + " años";
+}); 
 </script>
 
 <style scoped>

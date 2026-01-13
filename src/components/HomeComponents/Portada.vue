@@ -1,11 +1,28 @@
 <template>
-  <section id="portada">
-    <div class="perfil">
-      <img class="img-fluid" src="/img/foto_perfil.jpg" alt="Imagen de Javi">
-      <h1>FJavierMP</h1>
-      <h2>Desarrollador Web</h2>
-      <h3>Almería</h3>
-    </div>
+  <section
+    id="portada"
+    aria-labelledby="hero-title"
+    itemscope
+    itemtype="https://schema.org/Person"
+  >
+    <header class="perfil">
+      <figure class="perfil__foto">
+        <img
+          class="img-fluid"
+          src="/img/foto_perfil.jpg"
+          alt="Foto de perfil de Javier (FJavierMP), desarrollador web en Almería"
+          title="Javier (FJavierMP) — Desarrollador web"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+          itemprop="image"
+        >
+      </figure>
+
+      <h1 id="hero-title" itemprop="name">FJavierMP</h1>
+      <p class="perfil__rol" itemprop="jobTitle">Desarrollador Web</p>
+      <address class="perfil__ubicacion" itemprop="homeLocation">Almería</address>
+    </header>
   </section>
 </template>
 
@@ -20,7 +37,11 @@
   z-index: 1;
 }
 
-.perfil>img {
+.perfil__foto {
+  margin: 0;
+}
+
+.perfil__foto > img {
   border-radius: 150px;
   padding: 0.25rem;
 }
@@ -32,9 +53,14 @@
   padding: 0.25rem;
 }
 
-.perfil h2 {
+.perfil__rol,
+.perfil__ubicacion {
   font-weight: bold;
   color: white;
   padding: 0.25rem;
+}
+
+.perfil__ubicacion {
+  font-style: normal;
 }
 </style>
