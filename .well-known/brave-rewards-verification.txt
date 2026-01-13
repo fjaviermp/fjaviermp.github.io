@@ -1,4 +1,0 @@
-This is a Brave Rewards publisher verification file.
-
-Domain: fjaviermp.github.io
-Token: be277e2198c4c4e706bd8bbe1ef3b5cef909128bca2a4601246df5ec3ac2e623
