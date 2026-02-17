@@ -47,7 +47,7 @@ const servicios = ref<Servicio[]>([
 
 <style>
 #servicios {
-  background-color: #24273D !important;
+  background-color: var(--tertiary-color) !important;
   align-content: center;
   justify-content: center;
   align-items: center;

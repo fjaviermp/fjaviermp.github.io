@@ -49,7 +49,7 @@
 .perfil h1 {
   font-size: 4rem;
   font-weight: bolder;
-  color: orangered;
+  color: var(--primary-color);
   padding: 0.25rem;
 }
 

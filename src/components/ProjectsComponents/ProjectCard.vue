@@ -52,7 +52,7 @@ const props = defineProps({
 }
 
 .projectCard h1 {
-  color: #1E2233;
+  color: var(--secondary-color);
 }
 
 .projectCard .projectDesc {

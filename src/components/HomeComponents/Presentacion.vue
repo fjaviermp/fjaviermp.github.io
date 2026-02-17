@@ -95,7 +95,7 @@ const calculatedAge = computed(() => {
 }
 
 #presentacion {
-  background-color: #1E2233 !important;
+  background-color: var(--secondary-color) !important;
   align-content: center;
   justify-content: center;
   align-items: center;

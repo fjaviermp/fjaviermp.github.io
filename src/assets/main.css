@@ -5,8 +5,9 @@
 }
 
 :root {
-  --primary-color: orangered;
-  --second-color: white;
+  --primary-color: #ff4500;
+  --secondary-color: #1e2233 ;
+  --tertiary-color: #24273d ;
   --text-color: white;
 }
 

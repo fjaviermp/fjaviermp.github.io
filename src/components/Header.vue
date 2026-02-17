@@ -39,8 +39,15 @@
                 Conóceme
               </button>
               <ul class="dropdown-menu" id="dropdownItems" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#presentacion">Sobre mí</a></li>
-                <li><a class="dropdown-item" href="#servicios">Servicios</a></li>
+                <li>
+                  <router-link class="dropdown-item" to="/#presentacion">
+                    Sobre mí
+                  </router-link></li>
+                <li>
+                  <router-link class="dropdown-item" to="/#servicios">
+                    Servicios
+                  </router-link>
+                </li>
               </ul>
             </li>
 
@@ -172,7 +179,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll));
 }
 
 .custom-toggler.navbar-toggler {
-  border-color: var(--second-color);
+  border-color: var(--text-color);
 }
 
 .dropdown-menu {
